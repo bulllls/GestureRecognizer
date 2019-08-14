@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
        
-        
+        swipesObservers()
     }
 
     func swipesObservers() {
@@ -39,7 +39,18 @@ class ViewController: UIViewController {
     
     @objc func handleSwipes(gester: UISwipeGestureRecognizer) {
         
-        
+        switch gester.direction {
+        case .right:
+            label.text = "Right swipe"
+        case .up:
+            label.text = "Up swipe"
+        case .left:
+            label.text = "Left swipe"
+        case .down:
+            label.text = "Down swipe"
+        default:
+            break
+        }
     }
 }
 
